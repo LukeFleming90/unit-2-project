@@ -8,7 +8,7 @@ const morgan = require("morgan");
 const methodOverride = require("method-override");
 const path = require("path");
 
-const fruitController = require('./controllers/fruits');
+const FruitRouter = require('./controllers/fruits');
 const UserRouter = require('./controllers/user');
 
 const session = require("express-session");
@@ -44,7 +44,7 @@ app.use(
 // Routes
 ////////////////////////////////////////////
 
-app.use('/fruits', fruitController);
+app.use('/fruits', FruitRouter);
 app.use('/user', UserRouter);
 app.get("/", (req, res) => {
     res.render("Index.jsx");
